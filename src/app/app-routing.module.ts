@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component';
 import { AdminWebComponent } from './admin-web/admin-web.component';
@@ -7,7 +7,6 @@ import { HomeComponent } from './companion-mobile/home/home.component';
 import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
-import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
 import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
 import { ParticipantsComponent } from './admin-web/participants/participants.component';
 import { FormsComponent } from './admin-web/forms/forms.component';
@@ -15,7 +14,6 @@ import { QuizzesComponent } from './admin-web/quizzes/quizzes.component';
 import { SurveysComponent } from './admin-web/surveys/surveys.component';
 import { ReportingComponent } from './admin-web/reporting/reporting.component';
 import { ResourcesComponent } from './admin-web/resources/resources.component';
-
 
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full' },
@@ -35,7 +33,6 @@ const routes: Routes = [
     {path:'home', component: HomeComponent},
     {path: 'support', component: SupportComponent},
     {path: 'schedule', component: ScheduleComponent},
-    {path: 'quiz', component: QuizComponent},
     {path: 'more', component: MoreComponent}
   ]},
 ];
