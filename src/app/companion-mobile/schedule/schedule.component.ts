@@ -1,9 +1,21 @@
+import { Component, OnDestroy } from '@angular/core';
+
+
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
+
+  styleUrls: ['./schedule.component.scss'],
+
+})
+export class ScheduleComponent  {
+
+
   styleUrls: ['./schedule.component.scss']
 })
 export class ScheduleComponent implements OnDestroy {

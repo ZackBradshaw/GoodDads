@@ -14,9 +14,15 @@ import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
 
 import { environment } from '../environments/environment';
 import { AuthComponent } from './shared/auth/auth.component';
@@ -42,6 +48,7 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     SupportComponent,
     ScheduleComponent,
     MoreComponent,
+    QuizComponent,
     AuthComponent,
 
     DashboardComponent,
@@ -60,6 +67,9 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     MatInputModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],

@@ -1,3 +1,32 @@
+<div class="top-schedule-header">
+    <h1>My Schedule</h1>
+</div>
+
+
+<mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Module One</mat-card-title>
+        <mat-card-subtitle>Lesson Title</mat-card-subtitle>
+        <mat-card-actions align="end">
+            <button mat-button routerLink="/user/quiz">Start Quiz</button>
+        </mat-card-actions>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="lesson-content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </mat-card-content>
+
+  </mat-card>
+
+<!-- Next step: Repeat mat-card to complete 16 weeks of lessons-->
+
+
+
+
+
+
 <p>schedule works!</p>
 <iframe *ngIf="currentFormIndex !== null" #formFrame [src]="safeUrls[currentFormIndex]" (load)="checkFormCompletion(formFrame)" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 <p>The next form will be displayed in {{ nextFormTime }} seconds.</p>
