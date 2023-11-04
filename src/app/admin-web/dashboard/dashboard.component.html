@@ -1,1 +1,6 @@
 <p>dashboard works!</p>
+<iframe *ngIf="currentFormIndex !== null" [src]="safeUrls[currentFormIndex]" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<div *ngFor="let url of safeUrls; let i = index">
+  <a (click)="currentFormIndex = i" [href]="safeUrls[currentFormIndex]">{{ 'Form ' + (i + 1) }}</a>
+</div>
