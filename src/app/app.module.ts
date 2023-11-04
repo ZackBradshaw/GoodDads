@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,18 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
 
+import { environment } from '../environments/environment';
+import { AuthComponent } from './shared/auth/auth.component';
+import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
+import { ParticipantsComponent } from './admin-web/participants/participants.component';
+import { FormsComponent } from './admin-web/forms/forms.component';
+import { QuizzesComponent } from './admin-web/quizzes/quizzes.component';
+import { SurveysComponent } from './admin-web/surveys/surveys.component';
+import { ReportingComponent } from './admin-web/reporting/reporting.component';
+import { ResourcesComponent } from './admin-web/resources/resources.component';
+import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,6 +49,16 @@ import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
     ScheduleComponent,
     MoreComponent,
     QuizComponent,
+    AuthComponent,
+
+    DashboardComponent,
+    ParticipantsComponent,
+    FormsComponent,
+    QuizzesComponent,
+    SurveysComponent,
+    ReportingComponent,
+    ResourcesComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +70,8 @@ import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminWebComponent } from './admin-web.component';
+import { AuthComponent } from './auth.component';
 
-describe('AdminWebComponent', () => {
-  let component: AdminWebComponent;
-  let fixture: ComponentFixture<AdminWebComponent>;
+describe('AuthComponent', () => {
+  let component: AuthComponent;
+  let fixture: ComponentFixture<AuthComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminWebComponent]
+      declarations: [AuthComponent]
     });
-    fixture = TestBed.createComponent(AdminWebComponent);
+    fixture = TestBed.createComponent(AuthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
