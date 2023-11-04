@@ -14,14 +14,6 @@ import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
-
-import { environment } from '../environments/environment';
-import { AuthComponent } from './shared/auth/auth.component';
-=======
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -32,7 +24,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { FormsModule } from '@angular/forms';
->>>>>>> 7a557d29ea89352bab467b182b9d11de1c03687c
 import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
 import { ParticipantsComponent } from './admin-web/participants/participants.component';
 import { FormsComponent } from './admin-web/forms/forms.component';
@@ -41,6 +32,7 @@ import { SurveysComponent } from './admin-web/surveys/surveys.component';
 import { ReportingComponent } from './admin-web/reporting/reporting.component';
 import { ResourcesComponent } from './admin-web/resources/resources.component';
 import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
+import { AuthComponent } from './shared/auth/auth.component';
 
 
 
@@ -55,8 +47,6 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     SupportComponent,
     ScheduleComponent,
     MoreComponent,
-    AuthComponent,
-
     DashboardComponent,
     ParticipantsComponent,
     FormsComponent,
@@ -65,24 +55,21 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     ReportingComponent,
     ResourcesComponent,
     SidebarComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule,
-    FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-=======
     MatToolbarModule,
     MatButtonModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatTabsModule
->>>>>>> 7a557d29ea89352bab467b182b9d11de1c03687c
+    MatTabsModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

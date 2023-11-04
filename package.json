@@ -21,12 +21,6 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-<<<<<<< HEAD
-    "bootstrap": "^5.3.2",
-    "firebase": "^10.5.2",
-    "firebaseui": "^6.1.0",
-=======
->>>>>>> 7a557d29ea89352bab467b182b9d11de1c03687c
     "node-sass": "^9.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
