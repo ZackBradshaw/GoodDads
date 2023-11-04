@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./schedule.component.scss'],
 
 })
+<<<<<<< HEAD
 
 export class ScheduleComponent {
 
+=======
+
+export class ScheduleComponent  {
+
+>>>>>>> d19f0a2 (add changes)
 }
 
