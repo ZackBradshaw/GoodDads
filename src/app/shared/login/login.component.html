@@ -1,18 +1,49 @@
 <h1>Welcome!</h1>
 
-<form class="login-form">
+<!--
+
+<form class="login-form" >
     <mat-form-field class="example-full-width">
       <mat-label for="email">Email</mat-label>
-      <input matInput name="email" id="email" type="email" placeholder="Enter your email">
+      <input
+        matInput
+        name="email"
+        id="email"
+        type="email"
+        placeholder="Enter your email"
+        [(ngModel)]="userEmail">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label for="password">Password</mat-label>
-      <input matInput name="password" id="password" type="password" placeholder="Enter your password">
+      <input
+        matInput
+        name="password"
+        id="password"
+        type="password"
+        placeholder="Enter your password"
+        [(ngModel)]="userPassword">
     </mat-form-field>
 </form>
 
-<button routerLink="/admin">admin</button>
-<button routerLink="/user">companion</button>
+-->
 
-<app-auth></app-auth>
+<!--
+<button type="submit" (click)="loginWithEmailAndPassword()" *ngIf="showLoginButton">Log in</button>
+-->
+
+<button
+  type="submit"
+  (click)="loginWithGoogle()"
+  *ngIf="showLoginButton"
+  routerLink="/admin">
+  Log in as User
+</button>
+<button
+  type="submit"
+  (click)="loginWithGoogle()"
+  *ngIf="showLoginButton"
+  routerLink="/user">
+  Log in as Admin
+</button>
+<button type="submit" (click)="logout()" *ngIf="showLogoutButton">Log out</button>

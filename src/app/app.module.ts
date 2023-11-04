@@ -25,7 +25,6 @@ import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
 
 import { environment } from '../environments/environment';
-import { AuthComponent } from './shared/auth/auth.component';
 import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
 import { ParticipantsComponent } from './admin-web/participants/participants.component';
 import { FormsComponent } from './admin-web/forms/forms.component';
@@ -50,8 +49,6 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     ScheduleComponent,
     MoreComponent,
     QuizComponent,
-    AuthComponent,
-
     DashboardComponent,
     ParticipantsComponent,
     FormsComponent,
