@@ -12,6 +12,9 @@ import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    MatFormFieldModule, 
+    MatInputModule, 
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
