@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -36,11 +36,21 @@ export class ScheduleComponent implements OnDestroy {
     this.formUrls.forEach(url => {
       this.safeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(url))
     });
-    this.formTimeout = setTimeout(() => this.nextForm(), this.remainingTime * 1000);
-    setInterval(() => {
-      if (this.remainingTime > 0) this.remainingTime--;
-      if (this.displayDelay && this.nextFormTime > 0) this.nextFormTime--;
-    }, 1000);
+  }
+
+  ngOnInit() {
+    const storedIndex = localStorage.getItem('currentFormIndex');
+    const storedTime = localStorage.getItem('nextFormTime');
+    if (storedIndex) {
+      this.currentFormIndex = Number(storedIndex);
+    }
+    if (storedTime) {
+      const delay = Number(storedTime) - Date.now();
+      if (delay > 0) {
+        this.nextFormTime = delay / 1000;
+      }
+    }
+    this.nextForm();
   }
 
   ngOnDestroy() {
@@ -48,27 +58,34 @@ export class ScheduleComponent implements OnDestroy {
     clearTimeout(this.delayTimeout);
   }
 
-  nextForm() {
-    this.displayDelay = true;
-    this.currentFormIndex = null;
-    console.log('Current form index:', this.currentFormIndex); // Add this line
-    console.log('Current form URL:', this.safeUrls[this.currentFormIndex]); // And this line
-    this.remainingTime = 180; 
-    this.delayTimeout = setTimeout(() => {
-      this.currentFormIndex = ((this.currentFormIndex || 0) + 1) % this.safeUrls.length;
-      this.formCompleted = false;
-      this.displayDelay = false;
-      this.nextFormTime = 600; 
-      clearTimeout(this.formTimeout);
-      this.formTimeout = setTimeout(() => this.nextForm(), this.remainingTime * 1000);
-    }, this.nextFormTime * 1000);
-  }
+startTimer() {
+  this.formTimeout = setInterval(() => {
+    if (this.nextFormTime > 0) {
+      this.nextFormTime--;
+    } else {
+      clearInterval(this.formTimeout);
+      this.nextForm();
+    }
+  }, 1000);
+}
 
+nextForm() {
+  this.displayDelay = true;
+  this.currentFormIndex = ((this.currentFormIndex || 0) + 1) % this.safeUrls.length;
+  console.log('Current form index:', this.currentFormIndex);
+  console.log('Current form URL:', this.safeUrls[this.currentFormIndex]);
+  this.formCompleted = false;
+  this.displayDelay = false;
+  this.nextFormTime = 600; 
+  this.startTimer();
+  localStorage.setItem('currentFormIndex', String(this.currentFormIndex));
+  localStorage.setItem('nextFormTime', String(this.nextFormTime));
+}
   checkFormCompletion(frame: HTMLIFrameElement) {
     const frameDoc = frame.contentDocument || frame.contentWindow?.document;
     if (frameDoc) {
       this.formCompleted = frameDoc.body.textContent?.includes('Your response has been recorded.') || false;
-      if (this.formCompleted) {
+      if (this.formCompleted && this.nextFormTime === 0) {
         this.nextForm();
       }
     }
