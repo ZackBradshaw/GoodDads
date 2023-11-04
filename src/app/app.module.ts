@@ -11,6 +11,7 @@ import { HomeComponent } from './companion-mobile/home/home.component';
 import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MoreComponent } from './companion-mobile/more/more.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
