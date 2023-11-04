@@ -25,7 +25,6 @@ import {MatCardModule} from '@angular/material/card';
 import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
 
 import { environment } from '../environments/environment';
-import { AuthComponent } from './shared/auth/auth.component';
 import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
 import { ParticipantsComponent } from './admin-web/participants/participants.component';
 import { FormsComponent } from './admin-web/forms/forms.component';
@@ -34,6 +33,9 @@ import { SurveysComponent } from './admin-web/surveys/surveys.component';
 import { ReportingComponent } from './admin-web/reporting/reporting.component';
 import { ResourcesComponent } from './admin-web/resources/resources.component';
 import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -49,8 +51,6 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     ScheduleComponent,
     MoreComponent,
     QuizComponent,
-    AuthComponent,
-
     DashboardComponent,
     ParticipantsComponent,
     FormsComponent,
@@ -72,6 +72,9 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     MatToolbarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    MatListModule, 
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

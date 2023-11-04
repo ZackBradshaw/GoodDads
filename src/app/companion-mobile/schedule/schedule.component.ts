@@ -60,27 +60,3 @@ constructor(private sanitizer: DomSanitizer) {
   styleUrls: ['./schedule.component.scss'],
 
 })
-
-export class ScheduleComponent  {
-
-nextForm() {
-  this.displayDelay = true;
-  this.currentFormIndex = ((this.currentFormIndex || 0) + 1) % this.safeUrls.length;
-  this.formCompleted = false;
-  this.displayDelay = false;
-  this.nextFormTime = 600; 
-  this.startTimer();
-  localStorage.setItem('currentFormIndex', String(this.currentFormIndex));
-  localStorage.setItem('nextFormTime', String(this.nextFormTime));
-}
-  checkFormCompletion(frame: HTMLIFrameElement) {
-    const frameDoc = frame.contentDocument || frame.contentWindow?.document;
-    if (frameDoc) {
-      this.formCompleted = frameDoc.body.textContent?.includes('Your response has been recorded.') || false;
-      if (this.formCompleted && this.nextFormTime === 0) {
-        this.nextForm();
-      }
-    }
-  }
-}
-

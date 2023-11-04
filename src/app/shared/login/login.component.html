@@ -1,20 +1,17 @@
-<!-- <h1>Welcome Back</h1> -->
-<!-- 
-<form class="login-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Your Email</mat-label>
-      <input matInput placeholder="Ex. Email@email.com" value="">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="Enter your email" value=" ">
-    </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="Enter your password" value=" ">
-    </mat-form-field>
-</form>
-
-<button routerLink="/admin">admin</button>
-<button routerLink="/user">companion</button>
-
-<app-auth></app-auth> -->
+<h1>Welcome!</h1>
+<button
+  type="submit"
+  (click)="loginWithGoogle()"
+  *ngIf="showLoginButton"
+  routerLink="/admin">
+  Log in as User
+</button>
+<button
+  type="submit"
+  (click)="loginWithGoogle()"
+  *ngIf="showLoginButton"
+  routerLink="/user">
+  Log in as Admin
+</button>
+<button type="submit" (click)="logout()" *ngIf="showLogoutButton">Log out</button>
