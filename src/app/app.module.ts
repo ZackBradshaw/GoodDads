@@ -12,9 +12,16 @@ import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
+
+
+
+import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
 import { ParticipantsComponent } from './admin-web/participants/participants.component';
 import { FormsComponent } from './admin-web/forms/forms.component';
@@ -23,6 +30,7 @@ import { SurveysComponent } from './admin-web/surveys/surveys.component';
 import { ReportingComponent } from './admin-web/reporting/reporting.component';
 import { ResourcesComponent } from './admin-web/resources/resources.component';
 import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
+
 
 
 @NgModule({
@@ -48,10 +56,13 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatFormFieldModule, 
-    MatInputModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
