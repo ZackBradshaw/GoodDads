@@ -18,6 +18,10 @@
       "dom"
     ]
   },
+  "include": [
+    "src/**/*.ts",
+    "node_modules/@angular/core",
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
   }
