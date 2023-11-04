@@ -1,0 +1,16 @@
+.container{
+  max-width: 480px;
+  min-width: 310px;
+  height: 100lvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav{
+  justify-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
