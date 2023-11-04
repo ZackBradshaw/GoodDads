@@ -12,11 +12,15 @@ import { SupportComponent } from './companion-mobile/support/support.component';
 import { ScheduleComponent } from './companion-mobile/schedule/schedule.component';
 import { MoreComponent } from './companion-mobile/more/more.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { QuizComponent } from './companion-mobile/schedule/quiz/quiz.component';
 
 
 @NgModule({
@@ -30,16 +34,18 @@ import {MatCardModule} from '@angular/material/card';
     SupportComponent,
     ScheduleComponent,
     MoreComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatFormFieldModule, 
-    MatInputModule, 
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatCardModule, 
+    MatCardModule,
     MatButtonModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
