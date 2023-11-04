@@ -34,6 +34,8 @@ import { ReportingComponent } from './admin-web/reporting/reporting.component';
 import { ResourcesComponent } from './admin-web/resources/resources.component';
 import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -71,6 +73,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
+    MatListModule, 
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

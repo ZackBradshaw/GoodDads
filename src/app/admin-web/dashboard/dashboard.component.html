@@ -1,1 +1,4 @@
 <p>dashboard works!</p>
+<div *ngFor="let url of safeUrls; let i = index">
+  <a (click)="currentFormIndex = i" [href]="safeUrls[currentFormIndex]">{{ 'Form ' + (i + 1) }}</a>
+</div>
