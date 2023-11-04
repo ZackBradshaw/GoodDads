@@ -20,8 +20,14 @@ export class QuizComponent {
   nextFormTime = 600;
   safeUrls: SafeResourceUrl[] = [];
 
+
+// Sets the form so that users must log in to their Google Workspace account.
+
+
+
   constructor(private sanitizer: DomSanitizer) {
     this.formUrls.forEach(url => {
+
       this.safeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(url))
     });
     this.formTimeout = setTimeout(() => this.nextForm(), this.remainingTime * 1000);
