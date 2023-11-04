@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, Optional } from '@angular/core';
-import { Auth, authState, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { Auth, authState, signOut, User, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { EMPTY, Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { traceUntilFirst } from '@angular/fire/performance';
@@ -38,14 +38,16 @@ export class AuthComponent implements OnInit, OnDestroy {
     }
   }
 
-  async login() {
+  async loginWithEmailAndPassword() {
+    return await signInWithEmailAndPassword(this.auth, this.user, this.password);
+  }
+
+  async loginWithGoogle() {
     return await signInWithPopup(this.auth, new GoogleAuthProvider());
   }
 
   async logout() {
     return await signOut(this.auth);
   }
-
-  
 
 }
