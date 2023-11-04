@@ -35,7 +35,7 @@ import {FormsModule} from '@angular/forms';
     MatFormFieldModule, 
     MatInputModule, 
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
