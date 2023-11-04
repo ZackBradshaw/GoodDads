@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, getApp, initializeApp, setLogLevel } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,8 +36,6 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-
-
 
 @NgModule({
   declarations: [

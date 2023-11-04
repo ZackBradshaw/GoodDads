@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from './users.service';
+import { DataStorageService } from './dataStorage.service';
+import { User } from './user.model';
 
 @Component({
   selector: 'app-forms',
@@ -8,6 +11,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormsComponent implements OnInit {
   intakeForm: FormGroup;
+
+  constructor(private usersService: UsersService, private dataStorageService: DataStorageService){}
 
   ngOnInit(): void {
 
@@ -37,7 +42,9 @@ export class FormsComponent implements OnInit {
   }
 
   onSubmit() {
-
+    console.log(this.intakeForm);
+    // this.usersService.addUser(this.intakeForm.value);
+    this.dataStorageService.addUser(this.intakeForm.value);
   }
 
 }
