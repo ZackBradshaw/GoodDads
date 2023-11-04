@@ -7,9 +7,17 @@ div{
   width: 100vw;
 }
 
+
+
 .mat-mdc-card{
   width: 90%;
 }
+
+.mat-mdc-card-content{
+  display: flex;
+  justify-content: space-between;
+}
+
 .alerts{
   margin-top: 5%;
 }
