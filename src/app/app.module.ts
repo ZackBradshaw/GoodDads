@@ -69,7 +69,7 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     FormsModule,
     MatCardModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],
