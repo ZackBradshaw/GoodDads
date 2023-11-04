@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 })
 
-export class ScheduleComponent  {
+export class ScheduleComponent {
 
 }
 
