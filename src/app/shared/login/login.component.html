@@ -1,20 +1,22 @@
-<h1>Welcome!</h1>
+<div class="signIn">
+  <img src="../../../assets/logos/Strong Schools Circle Logo.png" alt="" />
+  <h1>Welcome!</h1>
 
-<!--
-
-<form class="login-form" >
-    <mat-form-field class="example-full-width">
+  <form class="login-form">
+    <mat-form-field class="example-full-width" appearance="outline">
       <mat-label for="email">Email</mat-label>
       <input
         matInput
+        #emailInput="ngModel"
         name="email"
         id="email"
         type="email"
         placeholder="Enter your email"
-        [(ngModel)]="userEmail">
+        ngModel
+      />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" appearance="outline">
       <mat-label for="password">Password</mat-label>
       <input
         matInput
@@ -22,28 +24,43 @@
         id="password"
         type="password"
         placeholder="Enter your password"
-        [(ngModel)]="userPassword">
+        ngModel
+      />
     </mat-form-field>
-</form>
+    <button
+    [routerLink]="emailInput.value == 'admin@test.com' ? ['/admin'] : ['user']"
+    mat-raised-button
+    color="primary"
+    type="submit">Log in</button>
 
--->
+  </form>
+  <div class="buttons">
 
-<!--
-<button type="submit" (click)="loginWithEmailAndPassword()" *ngIf="showLoginButton">Log in</button>
--->
+    <!-- <button
+      type="button"
+      (click)="loginWithGoogle()"
+      *ngIf="showLoginButton"
+      routerLink="/user"
 
-<button
-  type="submit"
-  (click)="loginWithGoogle()"
-  *ngIf="showLoginButton"
-  routerLink="/admin">
-  Log in as User
-</button>
-<button
-  type="submit"
-  (click)="loginWithGoogle()"
-  *ngIf="showLoginButton"
-  routerLink="/user">
-  Log in as Admin
-</button>
-<button type="submit" (click)="logout()" *ngIf="showLogoutButton">Log out</button>
+    >
+      Log in as User
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="loginWithGoogle()"
+      *ngIf="showLoginButton"
+      routerLink="/admin"
+    >
+      Log in as Admin
+    </button>
+    <button type="button" (click)="logout()" *ngIf="showLogoutButton">
+      Log out
+    </button> -->
+  </div>
+</div>
+
+
+
+
