@@ -1,20 +1,12 @@
-import { Component } from '@angular/core';
-
+import { Component, OnDestroy } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-schedule',
-  templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss']
+  selector: 'app-quiz',
+  templateUrl: './quiz.component.html',
+  styleUrls: ['./quiz.component.css']
 })
-export class ScheduleComponent implements OnDestroy {
-  currentFormIndex: number | null = 0;
-  formCompleted = false;
-  formTimeout: any;
-  delayTimeout: any;
-  displayDelay = false;
-  remainingTime = 180;
-  nextFormTime = 600; 
-
+export class QuizComponent {
   formUrls = [
     'https://docs.google.com/forms/d/e/1FAIpQLScvHlYAVEJ8C_Fez-uJfjEUd4mWiFEeXFZ0Xqhr23dqEU2AtA/viewform?usp=sf_link',
     'https://docs.google.com/forms/d/e/1FAIpQLSfgaajToahtbTtIW7FGF6ZvW6lIxYZ2lFMel_oz-o1UCeizCw/viewform?usp=sf_link',
@@ -31,16 +23,20 @@ export class ScheduleComponent implements OnDestroy {
     'https://docs.google.com/forms/d/e/1FAIpQLSe98fEtojkLw5yD1pn0JNUO5Jql807xHQHsWSI438FFSk8Ldg/viewform?usp=sf_link',
     'https://docs.google.com/forms/d/e/1FAIpQLSfhA46fhwAdZiL9Bujz9Wx686wmLY_zls0y1u3DzWOXkxNz8Q/viewform?usp=sf_link',
   ];
+  currentFormIndex: number | null = 0;
+  formCompleted = false;
+  formTimeout: any;
+  delayTimeout: any;
+  displayDelay = false;
+  remainingTime = 180;
+  nextFormTime = 600;
   safeUrls: SafeResourceUrl[] = [];
-  
 
-  
-constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer) {
     this.formUrls.forEach(url => {
       this.safeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(url))
     });
   }
-
 
   ngOnInit() {
     const storedIndex = localStorage.getItem('currentFormIndex');
@@ -57,18 +53,30 @@ constructor(private sanitizer: DomSanitizer) {
     this.nextForm();
   }
 
-  styleUrls: ['./schedule.component.scss'],
+  ngOnDestroy() {
+    clearTimeout(this.formTimeout);
+    clearTimeout(this.delayTimeout);
+  }
 
-})
-
-export class ScheduleComponent  {
+startTimer() {
+  this.formTimeout = setInterval(() => {
+    if (this.nextFormTime > 0) {
+      this.nextFormTime--;
+    } else {
+      clearInterval(this.formTimeout);
+      this.nextForm();
+    }
+  }, 1000);
+}
 
 nextForm() {
   this.displayDelay = true;
   this.currentFormIndex = ((this.currentFormIndex || 0) + 1) % this.safeUrls.length;
+  console.log('Current form index:', this.currentFormIndex);
+  console.log('Current form URL:', this.safeUrls[this.currentFormIndex]);
   this.formCompleted = false;
   this.displayDelay = false;
-  this.nextFormTime = 600; 
+  this.nextFormTime = 600;
   this.startTimer();
   localStorage.setItem('currentFormIndex', String(this.currentFormIndex));
   localStorage.setItem('nextFormTime', String(this.nextFormTime));
@@ -83,4 +91,3 @@ nextForm() {
     }
   }
 }
-
