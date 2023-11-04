@@ -1,4 +1,3 @@
-<!-- 
 ![Banner](banner.png)
 
 # Good Dads: Sparkling Tom Cats Hackathon Project
@@ -68,4 +67,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
--->
