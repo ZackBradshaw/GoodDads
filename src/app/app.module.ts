@@ -17,8 +17,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+
 import { environment } from '../environments/environment';
 import { AuthComponent } from './shared/auth/auth.component';
+import { DashboardComponent } from './admin-web/dashboard/dashboard.component';
+import { ParticipantsComponent } from './admin-web/participants/participants.component';
+import { FormsComponent } from './admin-web/forms/forms.component';
+import { QuizzesComponent } from './admin-web/quizzes/quizzes.component';
+import { SurveysComponent } from './admin-web/surveys/surveys.component';
+import { ReportingComponent } from './admin-web/reporting/reporting.component';
+import { ResourcesComponent } from './admin-web/resources/resources.component';
+import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
+
 
 
 @NgModule({
@@ -33,6 +43,15 @@ import { AuthComponent } from './shared/auth/auth.component';
     ScheduleComponent,
     MoreComponent,
     AuthComponent,
+
+    DashboardComponent,
+    ParticipantsComponent,
+    FormsComponent,
+    QuizzesComponent,
+    SurveysComponent,
+    ReportingComponent,
+    ResourcesComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
