@@ -1,4 +1,4 @@
-![Banner](banner.png)
+![stc](stc.jpg)
 
 # Good Dads: Sparkling Tom Cats Hackathon Project
 
