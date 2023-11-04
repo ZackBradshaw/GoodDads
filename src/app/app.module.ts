@@ -34,6 +34,7 @@ import { SurveysComponent } from './admin-web/surveys/surveys.component';
 import { ReportingComponent } from './admin-web/reporting/reporting.component';
 import { ResourcesComponent } from './admin-web/resources/resources.component';
 import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 
 
@@ -72,6 +73,7 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
     MatToolbarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
   providers: [],
   bootstrap: [AppComponent]
