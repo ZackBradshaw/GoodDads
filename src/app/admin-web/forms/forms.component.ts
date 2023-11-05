@@ -11,6 +11,7 @@ import { User } from './user.model';
 })
 export class FormsComponent implements OnInit {
   intakeForm: FormGroup;
+  formSubmitted = false;
 
   constructor(private usersService: UsersService, private dataStorageService: DataStorageService){}
 
@@ -43,9 +44,19 @@ export class FormsComponent implements OnInit {
   }
 
   onSubmit() {
+    this.showNotification()
     console.log(this.intakeForm);
     const user = {...this.intakeForm.value, isAdmin: false};
     this.usersService.addUser(user);
+    this.intakeForm.reset()
+
   }
+  showNotification(){
+    if(this.formSubmitted === true){
+      setTimeout(() => {
+        this.formSubmitted = false;
+       }, 3000);
+    }
+    }
 
 }

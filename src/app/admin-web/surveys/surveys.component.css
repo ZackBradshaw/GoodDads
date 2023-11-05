@@ -74,6 +74,9 @@ h1 {
   display: flex;
   justify-items: flex-start;
   justify-content: space-around;
+  &:nth-child(odd){
+    background: rgb(243, 241, 241);
+  };
 }
 hr {
   margin-top: 0;
