@@ -1,5 +1,5 @@
 export interface User {
-
+    id?: string,
     clientName: string,
     date: string,
     address: string,
@@ -9,6 +9,6 @@ export interface User {
     workPhone: string,
     email: string,
     alternativeContact: string,
-    childNames: string
-
+    childNames: string,
+    isAdmin: boolean,
 }
