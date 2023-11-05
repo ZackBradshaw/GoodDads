@@ -36,6 +36,7 @@ import { SidebarComponent } from './admin-web/shared/sidebar/sidebar.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { ProfileComponent } from './admin-web/shared/sidebar/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {MatListModule} from '@angular/material/list';
     ReportingComponent,
     ResourcesComponent,
     SidebarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

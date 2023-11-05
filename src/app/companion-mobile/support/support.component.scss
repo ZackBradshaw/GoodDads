@@ -2,8 +2,20 @@
     max-width: 600px;
     border-radius: 25px;
     justify-content: center;
+
+  }
+  .mat-mdc-card-header{
+    padding: 16px 16px 0;
+    min-width: 300px;
+    max-width: 450;
   }
 
 .support-main {
-    max-height: 400px;
+
+    padding: 5% 10%;
+  }
+
+  .mdc-card__media:last-child{
+    width: 20%;
+    border-radius: 100%;
   }
