@@ -3,7 +3,7 @@ import { Chart } from 'chart.js/auto';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
-
+import axios from 'axios';
 
 @Component({
   selector: 'app-dashboard',
@@ -41,7 +41,7 @@ export class DashboardComponent {
 
   ngOnInit() {
 
-    this.http.get<any[]>('http://localhost:3000/sheets').subscribe(data => {
+    this.http.get<any[]>('http://localhost:3000/forms').subscribe(data => {
       console.log(data);
       const chart = new Chart(this.chart.nativeElement, {
         type: 'bar',
