@@ -31,7 +31,7 @@ export class DashboardComponent {
   ];
   safeUrls: SafeResourceUrl[] = [];
 
-  constructor(private sanitizer: DomSanitizer, private dataService) {
+  constructor(private sanitizer: DomSanitizer, private dataService: DataService) {
     this.formUrls.forEach(url => {
       this.safeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(url))
     });
