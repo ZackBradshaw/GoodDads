@@ -1,7 +1,9 @@
+// src/app/admin-web/dashboard/dashboard.component.ts
 import { Chart } from 'chart.js/auto';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  currentFormIndex;
+  currentFormIndex: number | null = 0;
 
   @ViewChild('chart', { static: true }) chart: ElementRef;
 
@@ -51,7 +53,8 @@ export class DashboardComponent {
       data: {
         labels: fakeData.map(item => item.name),
         datasets: [{
-          data: fakeData.map(item => item.value)
+          data: fakeData.map(item => item.value),
+          backgroundColor: 'green'
         }]
       }
     });
@@ -67,21 +70,7 @@ export class DashboardComponent {
 //           }]
 //         }
 //       })
-//     })
-
-
-    this.http.get<any[]>('http://localhost:3000/forms').subscribe(data => {
-      console.log(data);
-      const chart = new Chart(this.chart.nativeElement, {
-        type: 'bar',
-        data: {
-          labels: data.map(item => item[0]),
-          datasets: [{
-            data: data.map(item => item[1])
-          }]
-        }
-      })
-    })
+    // })
   }
 }
 
