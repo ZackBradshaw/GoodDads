@@ -1,0 +1,33 @@
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px black;
+  height: 100vh;
+
+}
+
+.sidebar img{
+  width: 80%;
+  margin-bottom: 20%;
+}
+
+.sidebar button{
+  border-radius: 12px;
+  padding: 0.9375em 0;
+  margin-bottom: 7%;
+  height: 3em;
+  width: 12.5em;
+  border: none;
+  font-family: 'Inter';
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  background-color: #2E5077;
+}
+
+.sidebar .active{
+  background-color: #4DA2A8;
+}
