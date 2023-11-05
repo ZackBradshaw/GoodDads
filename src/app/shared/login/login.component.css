@@ -3,7 +3,10 @@
     max-width: 500px;
     width: 100%;
   }
-  
+  .signIn{
+    background: #4DA2A8;
+  }
+
   .example-full-width {
     width: 100%;
   }

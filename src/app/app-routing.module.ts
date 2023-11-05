@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminWebComponent, children: [
     {path:'', redirectTo:'/admin/dashboard', pathMatch: 'full'},
     {path:'dashboard', component: DashboardComponent},
-    {path: 'participants', component: ParticipantsComponent},
+    {path: 'users', component: ParticipantsComponent},
     {path: 'forms', component: FormsComponent},
     {path: 'quizzes', component: QuizzesComponent},
     {path: 'surveys', component: SurveysComponent},
