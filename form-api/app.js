@@ -19,15 +19,33 @@ app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
-app.get('/forms', async (req, res) => {
-  const auth = await authenticate({
-    keyfilePath: path.join(__dirname, 'key.json'),
-    scopes: 'https://www.googleapis.com/auth/forms.readonly',
+
+const {google} = require('googleapis');
+const keys = require('./key.json');
+
+app.get('/sheets', async (req, res) => {
+  const client = new google.auth.JWT(
+    keys.client_email, 
+    null, 
+    keys.private_key, 
+    ['https://www.googleapis.com/auth/spreadsheets']
+  );
+
+  client.authorize(function(err, tokens) {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log('Connected!');
+      gsrun(client);
+    }
   });
 
   const forms = google.forms({ version: 'v1', auth });
 
   const formUrls = [
+    'https://docs.google.com/forms/d/197XW6Wq5ZvxT-9abFD-W2kp9Nndk6_IMBeyRzQ1sFwk/edit#responses',
+    'https://docs.google.com/forms/d/1d0qh9bBoEjUhEb7Xhf9eJa3NMXpZkVXNhdmFgine7_0/edit#responses',
     'https://docs.google.com/forms/d/1d0qh9bBoEjUhEb7Xhf9eJa3NMXpZkVXNhdmFgine7_0/edit#responses',
     'https://docs.google.com/spreadsheets/d/1M65zkQ-KDeiyWx5LZUfjjQ1hN83fi3g4mjzqxpWXNG0/edit?resourcekey#gid=946570321',
     'https://docs.google.com/forms/d/e/1FAIpQLSdUfh5IYOW8x42VnNDLwx-kwGutigCzfv5yyeDpk5FhKuSDBw/edit#responses',
@@ -41,7 +59,7 @@ app.get('/forms', async (req, res) => {
     'https://docs.google.com/forms/d/e/1FAIpQLSfjrnkkRfutYxmZSRcDbiwpcX3TlqJ4-AiVv6O9FOODJVAgEA/edit#responses',
     'https://docs.google.com/forms/d/e/1FAIpQLScYkcayvppW4iQGQpX59Ajb0hT0BqfhN9deH_N-Gs5rYdOPpw/edit#responses',
     'https://docs.google.com/forms/d/e/1FAIpQLSe98fEtojkLw5yD1pn0JNUO5Jql807xHQHsWSI438FFSk8Ldg/edit#responses',
-    'https://docs.google.com/forms/d/e/1FAIpQLSfhA46fhwAdZiL9Bujz9Wx686wmLY_zls0y1u3DzWOXkxNz8Q/edit#responses',   // Your form URLs here...
+    'https://docs.google.com/forms/d/e/1FAIpQLSfhA46fhwAdZiL9Bujz9Wx686wmLY_zls0y1u3DzWOXkxNz8Q/edit#responses',
   ];
 
   const formIds = formUrls.map(url => {

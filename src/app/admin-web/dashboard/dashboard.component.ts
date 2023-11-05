@@ -38,6 +38,37 @@ export class DashboardComponent {
   }
 
   ngOnInit() {
+    const fakeData = [
+      {name: 'Form 1', value: 120},
+      {name: 'Form 2', value: 150},
+      {name: 'Form 3', value: 180},
+      {name: 'Form 4', value: 200},
+      {name: 'Form 5', value: 170},
+    ];
+
+    const chart = new Chart(this.chart.nativeElement, {
+      type: 'bar',
+      data: {
+        labels: fakeData.map(item => item.name),
+        datasets: [{
+          data: fakeData.map(item => item.value)
+        }]
+      }
+    });
+
+//     this.http.get<any[]>('http://localhost:3000/sheets').subscribe(data => {
+//       console.log(data);
+//       const chart = new Chart(this.chart.nativeElement, {
+//         type: 'bar',
+//         data: {
+//           labels: data.map(item => item[0]),
+//           datasets: [{
+//             data: data.map(item => item[1])
+//           }]
+//         }
+//       })
+//     })
+
 
     this.http.get<any[]>('http://localhost:3000/forms').subscribe(data => {
       console.log(data);
