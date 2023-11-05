@@ -8,6 +8,7 @@
       storageBucket: '',
       messagingSenderId: '',
       appId: '',
-    }
+    },
+    googleFormsApiKey: '',
   };
 

@@ -1,5 +1,5 @@
 import { DataService } from "./data.service";
-const {google} = require('googleapis');
+const {google} = require('s');
 const keys = require('./keys.json');
 
 const client = new google.auth.JWT(

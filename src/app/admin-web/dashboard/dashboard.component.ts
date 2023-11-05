@@ -1,7 +1,7 @@
 // src/app/admin-web/dashboard/dashboard.component.ts
-import { Chart } from 'chart.js';
+import { Chart } from 'chart.js/auto';
 import { DataService } from 'src/app/data.service';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -12,6 +12,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class DashboardComponent {
   currentFormIndex: number | null = 0;
+
+  @ViewChild('chart', { static: true }) chart: ElementRef;
 
   formUrls = [
     'https://docs.google.com/forms/d/197XW6Wq5ZvxT-9abFD-W2kp9Nndk6_IMBeyRzQ1sFwk/edit#responses',
@@ -47,19 +49,18 @@ export class DashboardComponent {
     this.dataService.currentData.subscribe(data => {
       console.log(data);
       chartData = data;
+      const chart = new Chart(this.chart.nativeElement, {
+        type: 'bar',
+        data: {
+          labels: chartData.map(item => item[0]),
+          datasets: [{
+            data: chartData.map(item => item[1])
+          }]
+        }
+      })
     })
 
     // Crwate Chart
-    const ctx: any = document.getElementById('chart');
-    const chart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: chartData.map(item => item[0]),
-        datasets: [{
-          data: chartData.map(item => item[1])
-        }]
-      }
-    })
 
   }
 }
