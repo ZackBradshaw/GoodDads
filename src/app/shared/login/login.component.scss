@@ -12,10 +12,12 @@ input{
 .login-form{
   display: flex;
   flex-direction: column;
+  min-width: 150px;
+  max-width: 500px;
+  width: 70%;
 }
 
 .signIn img{
   margin-bottom: 2rem;
   width: 10rem;
 }
-
