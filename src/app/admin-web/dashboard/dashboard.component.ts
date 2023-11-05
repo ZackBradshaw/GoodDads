@@ -1,8 +1,10 @@
 // src/app/admin-web/dashboard/dashboard.component.ts
+import { Component } from '@angular/core';
 import { Chart } from 'chart.js/auto';
 import { DataService } from 'src/app/data.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -11,7 +13,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  currentFormIndex: number | null = 0;
+
 
   @ViewChild('chart', { static: true }) chart: ElementRef;
 
@@ -63,6 +65,7 @@ export class DashboardComponent {
     // Crwate Chart
 
   }
+
 }
 
 

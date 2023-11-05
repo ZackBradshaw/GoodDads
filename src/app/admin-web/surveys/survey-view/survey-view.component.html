@@ -1,0 +1,16 @@
+<iframe
+    *ngIf="currentFormIndex !== null"
+    #formFrame
+    [src]="safeUrls[currentFormIndex]"
+    (load)="checkFormCompletion(formFrame)"
+    width="950"
+    height="1200"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    >Loading…</iframe
+  >
+  <p *ngIf="formCompleted">
+    Your response has been recorded. The next form will be displayed in
+    {{ nextFormTime }} seconds.
+  </p>
