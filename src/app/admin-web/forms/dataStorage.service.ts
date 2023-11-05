@@ -1,9 +1,8 @@
 import { Injectable } from "@angular/core";
 import { UsersService } from "./users.service";
-import { collection, Firestore, addDoc } from '@angular/fire/firestore';
+import { collection, Firestore, addDoc, getDoc, getDocs } from '@angular/fire/firestore';
 import { User } from "./user.model";
 import { setLogLevel } from "@angular/fire/app";
-// import { collection, doc, setDoc } from "firebase/firestore";
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -11,7 +10,6 @@ export class DataStorageService {
   constructor(private usersService: UsersService, private readonly firestore: Firestore) {}
 
   async addUser(user: User) {
-    console.log(user);
     // if (!user) return;
 
     setLogLevel('debug')
@@ -24,6 +22,30 @@ export class DataStorageService {
       console.log(result);
     } catch(err) {
       console.log(err)
+    }
+  }
+
+  async getUsers() {
+    setLogLevel('debug')
+
+    const userCollection = collection(this.firestore, 'users');
+    try {
+      const result = await getDocs(userCollection);
+      console.log(result);
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  async getUser(index) {
+    setLogLevel('debug')
+
+    const userCollection = collection(this.firestore, 'users');
+    try {
+      const result = await getDocs(userCollection);
+      console.log(result);
+    } catch(err) {
+      console.log(err);
     }
   }
 
