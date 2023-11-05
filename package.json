@@ -30,6 +30,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "@angular-devkit/build-angular": "^16.2.7",
     "@angular/cli": "^16.2.7",
     "@angular/compiler-cli": "^16.2.0",
