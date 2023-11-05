@@ -39,7 +39,7 @@ export class DashboardComponent {
 
   ngOnInit() {
 
-    this.http.get<any[]>('http://localhost:3000/sheets').subscribe(data => {
+    this.http.get<any[]>('http://localhost:3000/forms').subscribe(data => {
       console.log(data);
       const chart = new Chart(this.chart.nativeElement, {
         type: 'bar',
