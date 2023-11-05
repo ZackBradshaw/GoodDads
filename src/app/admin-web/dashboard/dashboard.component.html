@@ -1,5 +1,5 @@
 <p>dashboard works!</p>
-<canvas id="myChart"></canvas>
+<canvas id="chart"></canvas>
 <div *ngFor="let url of safeUrls; let i = index">
   <a (click)="currentFormIndex = i" [href]="safeUrls[currentFormIndex]">{{ 'Form ' + (i + 1) }}</a>
 </div>
