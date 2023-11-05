@@ -24,3 +24,11 @@ h1{
   margin-bottom: 0;
 }
 
+button::ng-deep{
+  background: #20421d;
+  color: white;
+}
+input{
+  line-height: 3rem;
+}
+
