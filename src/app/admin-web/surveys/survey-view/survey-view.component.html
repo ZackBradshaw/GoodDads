@@ -1,11 +1,10 @@
-<div class="container">
-  <iframe
+<iframe
     *ngIf="currentFormIndex !== null"
     #formFrame
     [src]="safeUrls[currentFormIndex]"
     (load)="checkFormCompletion(formFrame)"
-    width="380"
-    height="300"
+    width="950"
+    height="1200"
     frameborder="0"
     marginheight="0"
     marginwidth="0"
@@ -15,11 +14,3 @@
     Your response has been recorded. The next form will be displayed in
     {{ nextFormTime }} seconds.
   </p>
-  <p *ngIf="currentFormIndex !== null && !formCompleted">
-    Time remaining: {{ remainingTime }} seconds
-  </p>
-  <p *ngIf="currentFormIndex === null">
-    Ran out of time. The next form will be displayed in
-    {{ nextFormTime }} seconds.
-  </p>
-</div>

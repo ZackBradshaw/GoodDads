@@ -1,8 +1,14 @@
 *{
   text-align: center;
   background: white;
-  height: 100vh;
+  height: 88vh;
+  margin-bottom: 0;
 }
 .Uc2NEf{
   display: none;
+}
+
+p{
+  margin-top: 0;
+  padding: 2rem;
 }

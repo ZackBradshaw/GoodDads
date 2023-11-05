@@ -1,1 +1,38 @@
-<p>participants works!</p>
+<h1>Users</h1>
+<div class="survey-filters">
+  <div class="filters">
+    <Span>Filters: </Span>
+    <select name="status" id="" placeholder="status">
+      <option value="" selected disabled hidden>Status</option>
+      <option value="released">Released</option>
+      <option value="Unreleased">Unreleased</option>
+    </select>
+
+    <!-- <input type="text"  placeholder="Date"   onfocus="this.type='date'" onblur="this.type='text' | Date"/> -->
+    <select id="date" name="date">
+      <option value="" selected disabled hidden>Date</option>
+      <option></option>
+    </select>
+  </div>
+
+</div>
+<div class="surveys">
+  <div class="surveyHeadings">
+    <p class="checkbox"><input type="checkbox" /></p>
+    <p>Name</p>
+    <p>Email</p>
+    <p>Home Phone</p>
+    <p>Work Phone</p>
+  </div>
+  <hr />
+  <div>
+    <div class="survey-row" *ngFor="let user of users | async ">
+    <p><input type="checkbox" /></p>
+    <p>{{ user.clientName }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.homePhone }}</p>
+    <p>{{ user.workPhone }}</p>
+
+    <hr class="line" />
+  </div>
+</div>

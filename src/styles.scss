@@ -1,5 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Montserrat', "Helvetica Neue", sans-serif; }
+@import '/src/theme.scss';
+@import '/src/palette.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Monserrat', sans-serif;
+}
+
+button, input{
+  font-family: inherit;
+  background-color: mat.get-color-from-palette($my-primary, 900);
+  color: mat.get-color-from-palette($my-primary, 50);
+  transition: .25s background-color ease-in;
+}
+
+button.active {
+  background-color: mat.get-color-from-palette($my-accent, 600);
+  transition: .25s background-color ease-in;
+
+}
 

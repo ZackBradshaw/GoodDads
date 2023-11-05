@@ -1,16 +1,16 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.css']
+  selector: 'app-survey-view',
+  templateUrl: './survey-view.component.html',
+  styleUrls: ['./survey-view.component.css']
 })
-export class QuizComponent {
+export class SurveyViewComponent {
   formUrls = [
     'https://docs.google.com/forms/d/e/1FAIpQLScvHlYAVEJ8C_Fez-uJfjEUd4mWiFEeXFZ0Xqhr23dqEU2AtA/viewform?usp=sf_link',
     'https://docs.google.com/forms/d/e/1FAIpQLSfgaajToahtbTtIW7FGF6ZvW6lIxYZ2lFMel_oz-o1UCeizCw/viewform?usp=sf_link',
-    'https://docs.google.com/forms/d/e/1FAIpQLScvHlYAVEJ8C_Fez-uJfjEUd4mWiFEeXFZ0Xqhr23dqEU2AtA/viewform?usp=sf_link',
     'https://docs.google.com/forms/d/e/1FAIpQLSdUfh5IYOW8x42VnNDLwx-kwGutigCzfv5yyeDpk5FhKuSDBw/viewform?usp=sf_link',
     'https://docs.google.com/forms/d/e/1FAIpQLSc8k-w12pdoIMDMVK4iu6bKeqQ20KTrRpZ9PkoCB1WkNycRfw/viewform?usp=sf_link',
     'https://docs.google.com/forms/d/e/1FAIpQLSc9CCDXLDcV5F6nZOMuvi50UfrlsiVvCnwE-pfZvNppIhD5VQ/viewform?usp=sf_link',
@@ -33,24 +33,17 @@ export class QuizComponent {
   nextFormTime = 600;
   safeUrls: SafeResourceUrl[] = [];
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer, @Inject(MAT_DIALOG_DATA) private data:any ) {
+    console.log(data)
+    this.currentFormIndex = data.id
     this.formUrls.forEach(url => {
       this.safeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(url))
     });
+
   }
 
   ngOnInit() {
     const storedIndex = localStorage.getItem('currentFormIndex');
-    const storedTime = localStorage.getItem('nextFormTime');
-    if (storedIndex) {
-      this.currentFormIndex = Number(storedIndex);
-    }
-    if (storedTime) {
-      const delay = Number(storedTime) - Date.now();
-      if (delay > 0) {
-        this.nextFormTime = delay / 1000;
-      }
-    }
     this.nextForm();
   }
 
@@ -72,7 +65,7 @@ startTimer() {
 
 nextForm() {
   this.displayDelay = true;
-  this.currentFormIndex = ((this.currentFormIndex || 0) ) % this.safeUrls.length;
+  this.currentFormIndex = ((this.currentFormIndex || 0)) % this.safeUrls.length;
   console.log('Current form index:', this.currentFormIndex);
   console.log('Current form URL:', this.safeUrls[this.currentFormIndex]);
   this.formCompleted = false;

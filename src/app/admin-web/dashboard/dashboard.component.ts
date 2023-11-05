@@ -1,9 +1,7 @@
-// src/app/admin-web/dashboard/dashboard.component.ts
 import { Chart } from 'chart.js/auto';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
-import axios from 'axios';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +9,7 @@ import axios from 'axios';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  currentFormIndex: number | null = 0;
+  currentFormIndex;
 
   @ViewChild('chart', { static: true }) chart: ElementRef;
 

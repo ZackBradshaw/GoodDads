@@ -1,0 +1,134 @@
+.surveys{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
+  min-height: 35rem;
+  width: 95%;
+  justify-content: space-around;
+}
+h1 {
+  font-size: 2.5rem;
+
+}
+
+.surveyHeadings{
+  display: flex;
+  justify-content: space-around;
+}
+.surveyHeadings>*{
+  margin-right: auto;
+  margin-bottom: 0;
+  padding: 1.0625em 1% 0 1.125em;
+  height: 3em;
+  width: 13.75em;
+  justify-content: center;
+  color: #a5a5a5;
+}
+
+.survey-filters{
+  display: flex;
+  width: 94%;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1%;
+}
+.survey-filters button{
+    background: #20421d;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: white;
+    border-radius: 6px;
+    padding: 0.8% 5%;
+    border: none;
+    margin-left: 5%;
+}
+
+.filters > * {
+  text-align: center;
+  width: 6.5em;
+  height: 1.625em;
+  border-radius: 4px;
+  margin-right: 0.9375em;
+  border: 1px solid #d2d2d2;
+  color: #a5a5a5;
+}
+.filters > span {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 590;
+  line-height: normal;
+  margin: 0.0625em 0.4375em 0 1.125em;
+  padding-top: 0.3em;
+  width: 3.4375em;
+  align-self: flex-end;
+  border: none;
+}
+
+.survey-row{
+  display: flex;
+  justify-items: flex-start;
+  justify-content: space-around;
+}
+hr {
+  margin-top: 0;
+}
+.survey-row {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  &:nth-child(odd){
+    background: rgb(243, 241, 241);
+  }
+}
+.survey-row p{
+  display: flex;
+  align-items: center;
+  flex-basis: 18%;
+  margin-right: auto;
+  padding-left: 1.125em;
+  margin-bottom: 0;
+  height: 2.3em;
+  width: 13.75em;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.line {
+  flex-basis: 100%;
+  height: 0;
+  flex-wrap: wrap;
+}
+
+.line {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.survey-row>button {
+  text-align: center;
+  margin-right: 10%;
+  border: none;
+  outline: none;
+  border-right: 6px solid transparent;
+  border-radius: 4px;
+  background: #56a345;
+  width: 20%;
+  height: 1.8rem;
+  flex-shrink: 0;
+  color: white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+}
+
+.survey-row input{
+  padding: 2%;
+}

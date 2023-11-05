@@ -14,7 +14,8 @@ h1 {
 
 .surveyHeadings{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 15px 0;
 }
 .surveyHeadings>*{
   margin-right: auto;
@@ -34,7 +35,7 @@ h1 {
   margin-bottom: 1%;
 }
 .survey-filters button{
-    background: #20421d;
+    background: #2E5077;
     text-align: center;
     font-size: 16px;
     font-style: normal;
@@ -73,10 +74,7 @@ h1 {
 .survey-row{
   display: flex;
   justify-items: flex-start;
-  justify-content: space-around;
-  &:nth-child(odd){
-    background: rgb(243, 241, 241);
-  };
+  justify-content: space-evenly;
 }
 hr {
   margin-top: 0;
@@ -117,7 +115,7 @@ hr {
   outline: none;
   border-right: 6px solid transparent;
   border-radius: 4px;
-  background: #56a345;
+  background: #4DA2A8;
   width: 20%;
   height: 1.8rem;
   flex-shrink: 0;
@@ -132,3 +130,4 @@ hr {
 .survey-row input{
   padding: 2%;
 }
+
