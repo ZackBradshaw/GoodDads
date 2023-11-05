@@ -34,7 +34,7 @@ h1 {
   margin-bottom: 1%;
 }
 .survey-filters button{
-    background: #2E5077;
+    background: #20421d;
     text-align: center;
     font-size: 16px;
     font-style: normal;
@@ -117,7 +117,7 @@ hr {
   outline: none;
   border-right: 6px solid transparent;
   border-radius: 4px;
-  background: #4DA2A8;
+  background: #56a345;
   width: 20%;
   height: 1.8rem;
   flex-shrink: 0;

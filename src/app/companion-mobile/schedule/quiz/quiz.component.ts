@@ -71,7 +71,7 @@ startTimer() {
 
 nextForm() {
   this.displayDelay = true;
-  this.currentFormIndex = ((this.currentFormIndex || 0) + 1) % this.safeUrls.length;
+  this.currentFormIndex = ((this.currentFormIndex || 0) ) % this.safeUrls.length;
   console.log('Current form index:', this.currentFormIndex);
   console.log('Current form URL:', this.safeUrls[this.currentFormIndex]);
   this.formCompleted = false;

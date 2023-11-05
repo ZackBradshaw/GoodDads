@@ -17,9 +17,10 @@ body {
   font-family: 'Monserrat', sans-serif;
 }
 
-button, input {
+button, input{
   font-family: inherit;
   background-color: mat.get-color-from-palette($my-primary, 900);
+  color: mat.get-color-from-palette($my-primary, 50);
   transition: .25s background-color ease-in;
 }
 
