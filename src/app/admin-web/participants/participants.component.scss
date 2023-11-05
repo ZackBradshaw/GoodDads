@@ -14,7 +14,8 @@ h1 {
 
 .surveyHeadings{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 15px 0;
 }
 .surveyHeadings>*{
   margin-right: auto;
@@ -129,3 +130,4 @@ hr {
 .survey-row input{
   padding: 2%;
 }
+
