@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideFirebaseApp, getApp, initializeApp, setLogLevel } from '@angular/fire/app';
+import { HttpClientModule } from '@angular/common/http';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,6 +65,7 @@ import { ProfileComponent } from './admin-web/shared/sidebar/profile/profile.com
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
+    HttpClientModule,
     MatInputModule,
     BrowserAnimationsModule,
     FormsModule,
