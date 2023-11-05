@@ -22,7 +22,13 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "bootstrap": "^5.3.2",
+<<<<<<< HEAD
     "dotenv": "^16.3.1",
+=======
+    "chart": "^0.1.2",
+    "chart.js": "^4.4.0",
+    "dotenv": "^10.0.0",
+>>>>>>> 630fcf8 (feat: froms api)
     "firebase": "^10.5.2",
     "firebaseui": "^6.1.0",
     "googleapis": "^128.0.0",
