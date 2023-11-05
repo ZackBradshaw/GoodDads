@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from './users.service';
-import { DataStorageService } from './dataStorage.service';
+import { UsersService } from '../shared/users.service';
+import { DataStorageService } from '../shared/dataStorage.service';
 import { User } from './user.model';
 
 @Component({
@@ -39,12 +39,13 @@ export class FormsComponent implements OnInit {
       'alternativeContact': new FormControl(alternativeContact, Validators.required),
       'childNames': new FormControl(childNames, Validators.required),
     });
+
   }
 
   onSubmit() {
     console.log(this.intakeForm);
-    // this.usersService.addUser(this.intakeForm.value);
-    this.dataStorageService.addUser(this.intakeForm.value);
+    const user = {...this.intakeForm.value, isAdmin: false};
+    this.usersService.addUser(user);
   }
 
 }
