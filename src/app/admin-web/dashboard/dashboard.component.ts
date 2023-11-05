@@ -1,5 +1,3 @@
-import { DataService } from 'src/app/data.service';
-import { Component } from '@angular/core';
 import { Chart } from 'chart.js/auto';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
