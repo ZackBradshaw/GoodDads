@@ -1,9 +1,9 @@
-// src/app/admin-web/dashboard/dashboard.component.ts
-
-import { Chart } from 'chart.js/auto';
 import { DataService } from 'src/app/data.service';
+import { Component } from '@angular/core';
+import { Chart } from 'chart.js/auto';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -35,37 +35,27 @@ export class DashboardComponent {
   ];
   safeUrls: SafeResourceUrl[] = [];
 
-  constructor(private sanitizer: DomSanitizer, private dataService: DataService) {
+  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
     this.formUrls.forEach(url => {
       this.safeUrls.push(this.sanitizer.bypassSecurityTrustResourceUrl(url))
     });
   }
 
   ngOnInit() {
-    let chartData = [];
 
-    const storedIndex = localStorage.getItem('currentFormIndex');
-    if (storedIndex) {
-      this.currentFormIndex = Number(storedIndex);
-    }
-    this.dataService.currentData.subscribe(data => {
+    this.http.get<any[]>('http://localhost:3000/sheets').subscribe(data => {
       console.log(data);
-      chartData = data;
       const chart = new Chart(this.chart.nativeElement, {
         type: 'bar',
         data: {
-          labels: chartData.map(item => item[0]),
+          labels: data.map(item => item[0]),
           datasets: [{
-            data: chartData.map(item => item[1])
+            data: data.map(item => item[1])
           }]
         }
       })
     })
-
-    // Crwate Chart
-
   }
-
 }
 
 

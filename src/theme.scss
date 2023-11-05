@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import '/src/palette.scss';
+
+
+$my-primary: mat.define-palette($dark-green-palette, 900);
+$my-accent: mat.define-palette($light-green-palette, 600);
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Monserrat, sans-serif',
+);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ ),
+  typography: $custom-typography,
+));
+
+@include mat.all-component-themes($my-theme);

@@ -48,3 +48,4 @@ src/environments/environment.ts
 .firebase
 *-debug.log
 .runtimeconfig.json
+form-api/key.json
