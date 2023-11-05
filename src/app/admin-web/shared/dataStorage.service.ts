@@ -11,7 +11,6 @@ export class DataStorageService {
 
   async add(collectionName: string, item: any) {
 
-    setLogLevel('debug')
 
     const userCollection = collection(this.firestore, 'users');
     console.log(userCollection);
@@ -28,7 +27,6 @@ export class DataStorageService {
 
 
   async getAll(collectionName: string) {
-    setLogLevel('debug')
 
     const userCollection = collection(this.firestore, collectionName);
     try {

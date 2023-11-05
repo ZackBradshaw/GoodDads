@@ -18,24 +18,20 @@
 </div>
 <div class="surveys">
   <div class="surveyHeadings">
-    <p><input type="checkbox" /></p>
+    <p class="checkbox"><input type="checkbox" /></p>
     <p>Name</p>
-    <p>Address</p>
-    <p>City</p>
-    <p>Phone</p>
-    <p>Alternative Contact</p>
-    <p>Children</p>
+    <p>Email</p>
+    <p>Home Phone</p>
+    <p>Work Phone</p>
   </div>
   <hr />
-  <div class="survey-row">
-    <!-- <div class="survey-row" *ngFor="let url of safeUrls; let i = index"> -->
+  <div>
+    <div class="survey-row" *ngFor="let user of users | async ">
     <p><input type="checkbox" /></p>
-    <p>Name</p>
-    <p>Address</p>
-    <p>City</p>
-    <p>Phone</p>
-    <p>Alternative Contact</p>
-    <p>Children</p>
+    <p>{{ user.clientName }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.homePhone }}</p>
+    <p>{{ user.workPhone }}</p>
 
     <hr class="line" />
   </div>
