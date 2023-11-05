@@ -3,12 +3,8 @@
   flex-direction: column;
   border-right: solid 1px black;
   height: 100vh;
-<<<<<<< HEAD
   width: 80%;
   padding: 10%;
-
-=======
->>>>>>> 3401416 (Feat: customized theme (colors and typography))
 }
 
 .sidebar img{
@@ -22,14 +18,12 @@
   width: 100%;
   margin-bottom: 7%;
   border: none;
-<<<<<<< HEAD
-=======
+
   font-family: 'Montserrat';
   font-size: 1rem;
   font-weight: 600;
   line-height: 19px;
   letter-spacing: 0em;
->>>>>>> 3401416 (Feat: customized theme (colors and typography))
   text-align: center;
   color: white;
 }
