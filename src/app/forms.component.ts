@@ -7,13 +7,13 @@ import { google } from 'googleapis';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  private forms = google.forms('v1');
+  private forms: any = google.forms('v1');
 
   constructor() { }
 
   ngOnInit() {
     this.forms.forms.list({
-      auth: 'YOUR_API_KEY'
+      auth: 'YOUR_API_KEY',
       q: "mimeType='application/vnd.google-apps.for"
     }, (err, res) => {
       if (err) {

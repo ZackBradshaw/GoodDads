@@ -1,6 +1,35 @@
+
 div{
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  width: 100vw;
+}
+h1, h2 {
+  margin-left: 5%;
+  padding-top: 5%;
+}
+
+button{
+  margin-left: 25%;
+  width: 50%;
+}
+
+.header{
+  padding-top: 5%;
+  margin: 0;
+  padding: 0;
+  background: #2E5077;;
+  height: 20%;
+  width: 80px;
+  color: white;
+  width: 100%;
+  display: flex;
 }
