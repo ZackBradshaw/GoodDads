@@ -1,4 +1,9 @@
 
+.button {
+  justify-content: center;
+  padding-top: 1%;
+}
+
 div{
   height: 50vh;
   display: flex;
@@ -26,7 +31,7 @@ button{
   padding-top: 5%;
   margin: 0;
   padding: 0;
-  background: #2E5077;;
+  background: #2E5077;
   height: 20%;
   width: 80px;
   color: white;
