@@ -4,6 +4,14 @@
 
 This project is a comprehensive solution consisting of a Companion App, an Admin Web App, and several miscellaneous features. 
 
+# Screenshots
+
+![Quizzes Dash Board](./src/assets/screenshots/Screenshot%202023-11-05%20at%209.33.51 AM.png)
+![Login Screen](./src/assets/screenshots/Screenshot%202023-11-05%20at%209.34.11 AM.png)
+![Mobile Home](./src/assets/screenshots/Screenshot%202023-11-05%20at%209.35.48 AM.png)
+![Mobile schedule](./src/assets/screenshots/Screenshot%202023-11-05%20at%209.35.58 AM.png)
+![Mobile Quiz](./src/assets/screenshots/Screenshot%202023-11-05%20at%209.36.17 AM.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -53,10 +61,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Authors
 
-* **JugglingDev** - [Github](https://github.com/jugglingdev)
-* **Abem93** - [Github](https://github.com/abem93)
-* **ZackBradshaw** - [Github](https://github.com/ZackBradshaw)
-* **Desace1938** - [Github](https://github.com/Desace1938)
+* **JugglingDev** Kayla Paden- [Github](https://github.com/jugglingdev)
+* **Abem93** Abraham Mejia- [Github](https://github.com/abem93)
+* **ZackBradshaw** Zack Bradshaw- [Github](https://github.com/ZackBradshaw)
+* **Desace1938** - Desiree Aceves[Github](https://github.com/Desace1938)
 
 ## License
 
