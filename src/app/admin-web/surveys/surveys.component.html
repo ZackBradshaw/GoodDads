@@ -15,7 +15,7 @@
       </select>
 
     </div>
-    <button type="button" style="cursor: pointer;">Send</button>
+    <button type="button" style="cursor: pointer;" (click)="addNew()">Add New</button>
 </div>
 <div class="surveys">
   <div class="surveyHeadings">
@@ -29,7 +29,7 @@
     <p><input type="checkbox"></p>
     <p>{{ form.title + ' Survey' }}</p>
     <p>  {{ form.date | date:'MMM-dd' }} </p>
-    <button type="button"  (click)="openNew(i)" style="cursor: pointer;">View</button>
+    <button type="button"  (click)="viewSurvey(i)" style="cursor: pointer;">View</button>
 
 
     <!-- <hr class="line"> -->

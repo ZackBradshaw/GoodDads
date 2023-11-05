@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Add New Survey</h1>
+  <form #taskForm="ngForm">
+      <input
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Title"
+        ngModel
+        name="title"
+        #titleInput="ngModel"
+        required
+      />
+      <span class="error" *ngIf="titleInput.touched && !titleInput.valid"
+        >Please enter a Survey name!</span
+      >
+      <label for="">Date to Be Released</label>
+        <input type="date" name="date">
+      <label for="">Google Forms URL</label>
+      <textarea name="description" id="description" rows="1" placeholder="URL"></textarea>
+  </form>
+</div>

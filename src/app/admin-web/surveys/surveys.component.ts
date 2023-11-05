@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SurveyViewComponent } from './survey-view/survey-view.component';
 import { Form } from 'src/app/form.model';
+import { NewSurveyComponent } from './new-survey/new-survey.component';
 
 @Component({
   selector: 'app-surveys',
@@ -48,7 +49,10 @@ export class SurveysComponent {
 
 
   }
-  openNew(id:number):void {
+
+
+
+  viewSurvey(id:number):void {
     this.id = id
     const dialogRef = this.dialog.open(SurveyViewComponent, {
       height: '45.25em',
@@ -57,8 +61,6 @@ export class SurveysComponent {
         id: id
       }
     });
-
-
   }
 
   ngOnInit() {
@@ -77,6 +79,12 @@ export class SurveysComponent {
       }
     }
     this.nextForm();
+  }
+  addNew():void {
+    const dialogRef = this.dialog.open(NewSurveyComponent, {
+      height: '20.25em',
+      width: '68.125em',
+    });
   }
 
 

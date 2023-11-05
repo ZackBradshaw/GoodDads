@@ -39,6 +39,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { ProfileComponent } from './admin-web/shared/sidebar/profile/profile.component';
 import { SurveyViewComponent } from './admin-web/surveys/survey-view/survey-view.component';
+import { NewSurveyComponent } from './admin-web/surveys/new-survey/new-survey.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { SurveyViewComponent } from './admin-web/surveys/survey-view/survey-view
     SidebarComponent,
     ProfileComponent,
     SurveyViewComponent,
+    NewSurveyComponent,
   ],
   imports: [
     BrowserModule,
