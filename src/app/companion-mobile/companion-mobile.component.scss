@@ -1,6 +1,5 @@
 
 .container{
-  margin-top: 20px;
   max-width: 480px;
   min-width: 310px;
   height: 100vh;
@@ -8,6 +7,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-image: url(../../assets/logos/horizontal-blacklogo.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 40% 90%;
+  background-size: 300px;
 }
 
 .nav{
