@@ -1,8 +1,5 @@
 // src/app/admin-web/dashboard/dashboard.component.ts
-<<<<<<< HEAD
-=======
 import { DataService } from 'src/app/data.service';
->>>>>>> 3401416 (Feat: customized theme (colors and typography))
 import { Component } from '@angular/core';
 import { Chart } from 'chart.js/auto';
 import { Component, ElementRef, ViewChild } from '@angular/core';
@@ -17,7 +14,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-<<<<<<< HEAD
 
 
   @ViewChild('chart', { static: true }) chart: ElementRef;
@@ -61,10 +57,6 @@ export class DashboardComponent {
       })
     })
   }
-
-=======
-
->>>>>>> 3401416 (Feat: customized theme (colors and typography))
 }
 
 
