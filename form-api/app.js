@@ -1,6 +1,12 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const axios = require('axios');
+const { google } = require('googleapis');
+const keys = require('./key.json');
+const path = require('path');
+const { authenticate } = require('@google-cloud/local-auth');
+
+const app = express();
 const port = 3000;
 
 app.use(cors());
@@ -12,6 +18,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
 
 const {google} = require('googleapis');
 const keys = require('./key.json');
@@ -34,9 +41,13 @@ app.get('/sheets', async (req, res) => {
     }
   });
 
+  const forms = google.forms({ version: 'v1', auth });
+
   const formUrls = [
     'https://docs.google.com/forms/d/197XW6Wq5ZvxT-9abFD-W2kp9Nndk6_IMBeyRzQ1sFwk/edit#responses',
     'https://docs.google.com/forms/d/1d0qh9bBoEjUhEb7Xhf9eJa3NMXpZkVXNhdmFgine7_0/edit#responses',
+    'https://docs.google.com/forms/d/1d0qh9bBoEjUhEb7Xhf9eJa3NMXpZkVXNhdmFgine7_0/edit#responses',
+    'https://docs.google.com/spreadsheets/d/1M65zkQ-KDeiyWx5LZUfjjQ1hN83fi3g4mjzqxpWXNG0/edit?resourcekey#gid=946570321',
     'https://docs.google.com/forms/d/e/1FAIpQLSdUfh5IYOW8x42VnNDLwx-kwGutigCzfv5yyeDpk5FhKuSDBw/edit#responses',
     'https://docs.google.com/forms/d/e/1FAIpQLSc8k-w12pdoIMDMVK4iu6bKeqQ20KTrRpZ9PkoCB1WkNycRfw/edit#responses',
     'https://docs.google.com/forms/d/e/1FAIpQLSc9CCDXLDcV5F6nZOMuvi50UfrlsiVvCnwE-pfZvNppIhD5VQ/edit#responses',
@@ -51,25 +62,17 @@ app.get('/sheets', async (req, res) => {
     'https://docs.google.com/forms/d/e/1FAIpQLSfhA46fhwAdZiL9Bujz9Wx686wmLY_zls0y1u3DzWOXkxNz8Q/edit#responses',
   ];
 
-  const formIds = formUrls.map(url => url.split('/')[6]);
+  const formIds = formUrls.map(url => {
+    const match = url.match(/\/d\/(.*?)\/edit/);
+    return match ? match[1] : null;
+  });
 
-  async function gsrun(cl) {
-    const gsapi = google.sheets({version: 'v4', auth: cl});
-    
-    let allData = [];
-    
-    for (let id of formIds) {
-      const opt = {
-        spreadsheetId: id,
-        range: 'Form Responses 1!A2:B5'
-      };
-    
-      let data = await gsapi.spreadsheets.values.get(opt);
-      let dataArray = data.data.values;
-      allData.push(dataArray);
-    }
-    
-    console.log(allData);
-    res.send(allData);
+  let allData = [];
+
+  for (let id of formIds) {
+    const formRes = await forms.forms.get({ formId: id });
+    allData.push(formRes.data);
   }
+
+  res.send(allData);
 });

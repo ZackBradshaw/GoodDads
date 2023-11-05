@@ -1,0 +1,11 @@
+@import '@angular/material/theming';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Monserrat, sans-serif',
+);
+
+.mat-typography {
+  font-family: mat-font-family($custom-typography);
+}
+
+@include angular-material-typography($custom-typography);

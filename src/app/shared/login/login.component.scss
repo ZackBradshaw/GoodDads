@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 70vh;
+  width: 100%;
 }
 input{
   border-radius: 0px;
@@ -12,10 +13,11 @@ input{
 .login-form{
   display: flex;
   flex-direction: column;
+  width: 16rem;
 }
 
 .signIn img{
   margin-bottom: 2rem;
-  width: 10rem;
+  width: 12rem;
 }
 

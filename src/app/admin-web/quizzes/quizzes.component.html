@@ -1,1 +1,35 @@
-<p>quizzes works!</p>
+<h1>Quizzes</h1>
+<div class="survey-filters">
+    <div class="filters">
+      <Span>Filters: </Span>
+      <select name="status" id="" placeholder="status">
+        <option value="" selected disabled hidden>Status</option>
+        <option value="released">Released</option>
+        <option value="Unreleased">Unreleased</option>
+      </select>
+
+      <!-- <input type="text"  placeholder="Date"   onfocus="this.type='date'" onblur="this.type='text' | Date"/> -->
+      <select id="date" name="date" >
+        <option value="" selected disabled hidden>Date</option>
+        <option ></option>
+      </select>
+    </div>
+    <button type="button" style="cursor: pointer;">Send</button>
+</div>
+<div class="surveys">
+  <div class="surveyHeadings">
+    <p><input type="checkbox"></p>
+    <p>Title</p>
+    <p>Release Date</p>
+    <p>View</p>
+  </div>
+  <hr>
+  <div class="survey-row" *ngFor="let form of formUrls; let i = index">
+    <p><input type="checkbox"></p>
+    <p>{{ form.title + ' Quiz' }}</p>
+    <p>  {{ form.date | date:'MMM-dd' }} </p>
+    <button type="button"  (click)="openNew(i)" style="cursor: pointer;">View</button>
+
+  </div>
+
+</div>

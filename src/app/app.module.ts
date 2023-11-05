@@ -16,7 +16,7 @@ import { ScheduleComponent } from './companion-mobile/schedule/schedule.componen
 import { MoreComponent } from './companion-mobile/more/more.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -38,6 +38,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { ProfileComponent } from './admin-web/shared/sidebar/profile/profile.component';
+import { SurveyViewComponent } from './admin-web/surveys/survey-view/survey-view.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ProfileComponent } from './admin-web/shared/sidebar/profile/profile.com
     ResourcesComponent,
     SidebarComponent,
     ProfileComponent,
+    SurveyViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,8 +78,9 @@ import { ProfileComponent } from './admin-web/shared/sidebar/profile/profile.com
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    MatListModule, 
+    MatListModule,
     MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
