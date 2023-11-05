@@ -1,4 +1,3 @@
-// src/app/admin-web/dashboard/dashboard.component.ts
 import { DataService } from 'src/app/data.service';
 import { Component } from '@angular/core';
 import { Chart } from 'chart.js/auto';
@@ -14,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+  currentFormIndex;
 
   @ViewChild('chart', { static: true }) chart: ElementRef;
 

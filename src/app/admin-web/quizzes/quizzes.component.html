@@ -24,10 +24,10 @@
     <p>View</p>
   </div>
   <hr>
-  <div class="survey-row" *ngFor="let url of safeUrls; let i = index">
+  <div class="survey-row" *ngFor="let form of formUrls; let i = index">
     <p><input type="checkbox"></p>
-    <p>{{ 'Week ' + (i+1) + ' Quiz' }}</p>
-    <p>  {{ 'November'+ ' ' + ((i+1) * 7) }} </p>
+    <p>{{ form.title + ' Quiz' }}</p>
+    <p>  {{ form.date | date:'MMM-dd' }} </p>
     <button type="button"  (click)="openNew(i)" style="cursor: pointer;">View</button>
 
 

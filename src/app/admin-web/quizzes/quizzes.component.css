@@ -81,6 +81,9 @@ hr {
 .survey-row {
   align-items: flex-start;
   flex-wrap: wrap;
+  &:nth-child(odd){
+    background: rgb(243, 241, 241);
+  }
 }
 .survey-row p{
   display: flex;
@@ -123,7 +126,7 @@ hr {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  flex-shrink: 9;
+
 }
 
 .survey-row input{
